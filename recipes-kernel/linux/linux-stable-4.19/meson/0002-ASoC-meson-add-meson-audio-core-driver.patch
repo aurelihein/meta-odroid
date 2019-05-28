@@ -1,7 +1,7 @@
-From 4770a464de7b87bc849e4e110f197ef9fa7bccf6 Mon Sep 17 00:00:00 2001
+From 6b2734923e6bf1d4bd98f918400e2c7a692a8db0 Mon Sep 17 00:00:00 2001
 From: Jerome Brunet <jbrunet@baylibre.com>
 Date: Thu, 30 Mar 2017 11:49:55 +0200
-Subject: [PATCH] ASoC: meson: add meson audio core driver
+Subject: [PATCH 02/53] ASoC: meson: add meson audio core driver
 
 This patch adds support for the audio core driver for the Amlogic Meson SoC
 family. The purpose of this driver is to properly reset the audio block and
@@ -15,18 +15,17 @@ of the S905 (gxbb). This datasheet is available here: [0].
 [0]: http://dn.odroid.com/S905/DataSheet/S905_Public_Datasheet_V1.1.4.pdf
 
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-
 ---
- sound/soc/meson/Kconfig      |  10 +++
+ sound/soc/meson/Kconfig      |  10 ++
  sound/soc/meson/Makefile     |   4 +
- sound/soc/meson/audio-core.c | 190 +++++++++++++++++++++++++++++++++++++++++++
- sound/soc/meson/audio-core.h |  28 +++++++
+ sound/soc/meson/audio-core.c | 190 +++++++++++++++++++++++++++++++++++
+ sound/soc/meson/audio-core.h |  28 ++++++
  4 files changed, 232 insertions(+)
  create mode 100644 sound/soc/meson/audio-core.c
  create mode 100644 sound/soc/meson/audio-core.h
 
 diff --git a/sound/soc/meson/Kconfig b/sound/soc/meson/Kconfig
-index 8af8bc3..ed432d4 100644
+index 8af8bc358a90..ed432d488b74 100644
 --- a/sound/soc/meson/Kconfig
 +++ b/sound/soc/meson/Kconfig
 @@ -63,3 +63,13 @@ config SND_MESON_AXG_SPDIFOUT
@@ -44,7 +43,7 @@ index 8af8bc3..ed432d4 100644
 +	  the Amlogic Meson SoCs Audio interfaces. You will also need to
 +	  select the audio interfaces to support below.
 diff --git a/sound/soc/meson/Makefile b/sound/soc/meson/Makefile
-index c5e003b..768d7c4 100644
+index c5e003b093db..768d7c414649 100644
 --- a/sound/soc/meson/Makefile
 +++ b/sound/soc/meson/Makefile
 @@ -19,3 +19,7 @@ obj-$(CONFIG_SND_MESON_AXG_TDMIN) += snd-soc-meson-axg-tdmin.o
@@ -58,7 +57,7 @@ index c5e003b..768d7c4 100644
 \ No newline at end of file
 diff --git a/sound/soc/meson/audio-core.c b/sound/soc/meson/audio-core.c
 new file mode 100644
-index 0000000..99993ec
+index 000000000000..99993ec4a5cc
 --- /dev/null
 +++ b/sound/soc/meson/audio-core.c
 @@ -0,0 +1,190 @@
@@ -254,7 +253,7 @@ index 0000000..99993ec
 +MODULE_LICENSE("GPL v2");
 diff --git a/sound/soc/meson/audio-core.h b/sound/soc/meson/audio-core.h
 new file mode 100644
-index 0000000..6e7a24c
+index 000000000000..6e7a24cdc4a9
 --- /dev/null
 +++ b/sound/soc/meson/audio-core.h
 @@ -0,0 +1,28 @@
@@ -286,3 +285,6 @@ index 0000000..6e7a24c
 +};
 +
 +#endif /* _MESON_AUDIO_CORE_H_ */
+-- 
+2.17.1
+

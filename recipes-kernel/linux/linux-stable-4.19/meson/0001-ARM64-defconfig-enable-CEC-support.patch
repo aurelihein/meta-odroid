@@ -1,7 +1,7 @@
-From 0c815d66dbaa54b53e4b54105992ce44dfe8c36f Mon Sep 17 00:00:00 2001
+From 6763c7964e9cb28e21497eee0032be053461bba5 Mon Sep 17 00:00:00 2001
 From: Jerome Brunet <jbrunet@baylibre.com>
 Date: Mon, 13 Nov 2017 12:09:40 +0100
-Subject: [PATCH] ARM64: defconfig: enable CEC support
+Subject: [PATCH 01/53] ARM64: defconfig: enable CEC support
 
 Turn on CONFIG_CEC_SUPPORT and CONFIG_CEC_PLATFORM_DRIVERS
 Turn on CONFIG_VIDEO_MESON_AO_CEC as module
@@ -9,13 +9,12 @@ Turn on CONFIG_DRM_DW_HDMI_CEC as module
 
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-
 ---
  arch/arm64/configs/defconfig | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index db8d364..ab1cb51 100644
+index db8d364f8476..ab1cb51319e7 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
 @@ -413,6 +413,7 @@ CONFIG_MEDIA_SUPPORT=m
@@ -43,3 +42,6 @@ index db8d364..ab1cb51 100644
  CONFIG_DRM_VC4=m
  CONFIG_DRM_HISI_HIBMC=m
  CONFIG_DRM_HISI_KIRIN=m
+-- 
+2.17.1
+

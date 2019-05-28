@@ -1,21 +1,20 @@
-From 32a55958cc2d89e2feee831ca4e6ceae8458e950 Mon Sep 17 00:00:00 2001
+From 99e6d5ba97d0615428f88850ee8366a9dc24168e Mon Sep 17 00:00:00 2001
 From: Jerome Brunet <jbrunet@baylibre.com>
 Date: Thu, 30 Mar 2017 13:43:52 +0200
-Subject: [PATCH] ASoC: meson: add aiu spdif dma support
+Subject: [PATCH 06/53] ASoC: meson: add aiu spdif dma support
 
 Add support for the spdif output dma which is part of the AIU block
 
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-
 ---
  sound/soc/meson/Kconfig         |   7 +
  sound/soc/meson/Makefile        |   4 +-
- sound/soc/meson/aiu-spdif-dma.c | 388 ++++++++++++++++++++++++++++++++++++++++
+ sound/soc/meson/aiu-spdif-dma.c | 388 ++++++++++++++++++++++++++++++++
  3 files changed, 398 insertions(+), 1 deletion(-)
  create mode 100644 sound/soc/meson/aiu-spdif-dma.c
 
 diff --git a/sound/soc/meson/Kconfig b/sound/soc/meson/Kconfig
-index 5904e9e..712303f 100644
+index 5904e9e50569..712303ff8970 100644
 --- a/sound/soc/meson/Kconfig
 +++ b/sound/soc/meson/Kconfig
 @@ -80,3 +80,10 @@ config SND_SOC_MESON_I2S
@@ -30,7 +29,7 @@ index 5904e9e..712303f 100644
 +	  Say Y or M if you want to add support for spdif dma driver for Amlogic
 +	  Meson SoCs.
 diff --git a/sound/soc/meson/Makefile b/sound/soc/meson/Makefile
-index b8641f9..dc5164a7 100644
+index b8641f9f7fc1..dc5164a7e164 100644
 --- a/sound/soc/meson/Makefile
 +++ b/sound/soc/meson/Makefile
 @@ -22,8 +22,10 @@ obj-$(CONFIG_SND_MESON_AXG_SPDIFOUT) += snd-soc-meson-axg-spdifout.o
@@ -49,7 +48,7 @@ index b8641f9..dc5164a7 100644
 \ No newline at end of file
 diff --git a/sound/soc/meson/aiu-spdif-dma.c b/sound/soc/meson/aiu-spdif-dma.c
 new file mode 100644
-index 0000000..81c3b85
+index 000000000000..81c3b856fbf9
 --- /dev/null
 +++ b/sound/soc/meson/aiu-spdif-dma.c
 @@ -0,0 +1,388 @@
@@ -441,3 +440,6 @@ index 0000000..81c3b85
 +MODULE_DESCRIPTION("Meson AIU spdif DMA ASoC Driver");
 +MODULE_AUTHOR("Jerome Brunet <jbrunet@baylibre.com>");
 +MODULE_LICENSE("GPL");
+-- 
+2.17.1
+

@@ -1,23 +1,22 @@
-From 9031b415030a316ec4ca513185e2d2c0fbb894c4 Mon Sep 17 00:00:00 2001
+From 91eb80de0a4425e8856484d6480b2e347ccfa83d Mon Sep 17 00:00:00 2001
 From: Jerome Brunet <jbrunet@baylibre.com>
 Date: Thu, 30 Mar 2017 12:17:27 +0200
-Subject: [PATCH] ASoC: meson: add initial i2s dai support
+Subject: [PATCH 05/53] ASoC: meson: add initial i2s dai support
 
 Add support for the i2s dai found on Amlogic Meson SoC family.
 With this initial implementation, only playback is supported.
 Capture will be part of furture work.
 
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-
 ---
  sound/soc/meson/Kconfig   |   2 +-
  sound/soc/meson/Makefile  |   4 +-
- sound/soc/meson/i2s-dai.c | 465 ++++++++++++++++++++++++++++++++++++++++++++++
+ sound/soc/meson/i2s-dai.c | 465 ++++++++++++++++++++++++++++++++++++++
  3 files changed, 469 insertions(+), 2 deletions(-)
  create mode 100644 sound/soc/meson/i2s-dai.c
 
 diff --git a/sound/soc/meson/Kconfig b/sound/soc/meson/Kconfig
-index 6e030b5..5904e9e 100644
+index 6e030b5c7804..5904e9e50569 100644
 --- a/sound/soc/meson/Kconfig
 +++ b/sound/soc/meson/Kconfig
 @@ -78,5 +78,5 @@ config SND_SOC_MESON_I2S
@@ -28,7 +27,7 @@ index 6e030b5..5904e9e 100644
 +	  Say Y or M if you want to add support for i2s driver for Amlogic
  	  Meson SoCs.
 diff --git a/sound/soc/meson/Makefile b/sound/soc/meson/Makefile
-index 5796007..b8641f9 100644
+index 57960077aab2..b8641f9f7fc1 100644
 --- a/sound/soc/meson/Makefile
 +++ b/sound/soc/meson/Makefile
 @@ -22,6 +22,8 @@ obj-$(CONFIG_SND_MESON_AXG_SPDIFOUT) += snd-soc-meson-axg-spdifout.o
@@ -45,7 +44,7 @@ index 5796007..b8641f9 100644
 \ No newline at end of file
 diff --git a/sound/soc/meson/i2s-dai.c b/sound/soc/meson/i2s-dai.c
 new file mode 100644
-index 0000000..1008af8
+index 000000000000..1008af8d3972
 --- /dev/null
 +++ b/sound/soc/meson/i2s-dai.c
 @@ -0,0 +1,465 @@
@@ -514,3 +513,6 @@ index 0000000..1008af8
 +MODULE_DESCRIPTION("Meson i2s DAI ASoC Driver");
 +MODULE_AUTHOR("Jerome Brunet <jbrunet@baylibre.com>");
 +MODULE_LICENSE("GPL v2");
+-- 
+2.17.1
+

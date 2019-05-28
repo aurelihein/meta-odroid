@@ -1,7 +1,8 @@
-From f0417a0c309fb02a5896abb868a52a1a3e23d610 Mon Sep 17 00:00:00 2001
+From dc4eb517f2800001f77bec852f8f688f0164e51b Mon Sep 17 00:00:00 2001
 From: Jerome Brunet <jbrunet@baylibre.com>
 Date: Wed, 20 Sep 2017 18:10:08 +0200
-Subject: [PATCH] ARM64: dts: meson: activate hdmi audio HDMI enabled boards
+Subject: [PATCH 13/53] ARM64: dts: meson: activate hdmi audio HDMI enabled
+ boards
 
 This patch activate audio over HDMI on selected boards
 
@@ -11,24 +12,23 @@ the audio I expect to see merged
 
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-
 ---
- .../arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi | 45 ++++++++++++++++++++++
- .../boot/dts/amlogic/meson-gxbb-nanopi-k2.dts      | 45 ++++++++++++++++++++++
- .../boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts    | 45 ++++++++++++++++++++++
- .../arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts | 45 ++++++++++++++++++++++
- arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi   | 45 ++++++++++++++++++++++
- arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi  | 45 ++++++++++++++++++++++
- .../dts/amlogic/meson-gxl-s905x-khadas-vim.dts     | 45 ++++++++++++++++++++++
- .../dts/amlogic/meson-gxl-s905x-libretech-cc.dts   | 45 ++++++++++++++++++++++
- .../dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts    | 45 ++++++++++++++++++++++
- .../boot/dts/amlogic/meson-gxl-s905x-p212.dts      | 45 ++++++++++++++++++++++
- .../boot/dts/amlogic/meson-gxm-khadas-vim2.dts     | 45 ++++++++++++++++++++++
- .../arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts | 45 ++++++++++++++++++++++
+ .../boot/dts/amlogic/meson-gx-p23x-q20x.dtsi  | 45 +++++++++++++++++++
+ .../boot/dts/amlogic/meson-gxbb-nanopi-k2.dts | 45 +++++++++++++++++++
+ .../dts/amlogic/meson-gxbb-nexbox-a95x.dts    | 45 +++++++++++++++++++
+ .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  | 45 +++++++++++++++++++
+ .../boot/dts/amlogic/meson-gxbb-p20x.dtsi     | 45 +++++++++++++++++++
+ .../boot/dts/amlogic/meson-gxbb-wetek.dtsi    | 45 +++++++++++++++++++
+ .../amlogic/meson-gxl-s905x-khadas-vim.dts    | 45 +++++++++++++++++++
+ .../amlogic/meson-gxl-s905x-libretech-cc.dts  | 45 +++++++++++++++++++
+ .../amlogic/meson-gxl-s905x-nexbox-a95x.dts   | 45 +++++++++++++++++++
+ .../boot/dts/amlogic/meson-gxl-s905x-p212.dts | 45 +++++++++++++++++++
+ .../dts/amlogic/meson-gxm-khadas-vim2.dts     | 45 +++++++++++++++++++
+ .../boot/dts/amlogic/meson-gxm-nexbox-a1.dts  | 45 +++++++++++++++++++
  12 files changed, 540 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
-index 765247b..fb9ad6f 100644
+index 765247bc4f24..fb9ad6faa745 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi
 @@ -102,6 +102,39 @@
@@ -98,7 +98,7 @@ index 765247b..fb9ad6f 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-index cbe99bd..5b10de9 100644
+index cbe99bd4e06d..5b10de9a0bad 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
 @@ -88,6 +88,39 @@
@@ -168,7 +168,7 @@ index cbe99bd..5b10de9 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
-index 4cf7f6e..ff87bdc 100644
+index 4cf7f6e80c6a..ff87bdc7ddbf 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
 @@ -119,6 +119,39 @@
@@ -238,7 +238,7 @@ index 4cf7f6e..ff87bdc 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-index 54954b3..3da3309 100644
+index 54954b314a45..3da33090b8fe 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
 @@ -110,6 +110,39 @@
@@ -308,7 +308,7 @@ index 54954b3..3da3309 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi
-index ce86226..84eb93b 100644
+index ce862266b9aa..84eb93b4229f 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi
 @@ -113,6 +113,39 @@
@@ -378,7 +378,7 @@ index ce86226..84eb93b 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
-index 70325b2..7d1f172 100644
+index 70325b273bd2..7d1f1726f29d 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
 @@ -105,6 +105,47 @@
@@ -441,7 +441,7 @@ index 70325b2..7d1f172 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-index d32cf38..f053595 100644
+index d32cf3846370..f053595ebdc4 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
 @@ -65,6 +65,39 @@
@@ -511,7 +511,7 @@ index d32cf38..f053595 100644
  	status = "okay";
  	pinctrl-0 = <&i2c_a_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
-index f63bceb..f56969e 100644
+index f63bceb88caa..f56969efffba 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-libretech-cc.dts
 @@ -84,6 +84,39 @@
@@ -581,7 +581,7 @@ index f63bceb..f56969e 100644
  	status = "okay";
  	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts
-index 6739697..e3e777f 100644
+index 6739697be1de..e3e777f665c0 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts
 @@ -102,6 +102,39 @@
@@ -651,7 +651,7 @@ index 6739697..e3e777f 100644
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts
-index 5896e8a..f8c66a7 100644
+index 5896e8a5d86b..f8c66a7972b3 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dts
 @@ -32,6 +32,39 @@
@@ -720,7 +720,7 @@ index 5896e8a..f8c66a7 100644
  	status = "okay";
  	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-index 313f88f..4fbfa5a 100644
+index 313f88f8759e..4fbfa5a850cc 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
 @@ -85,6 +85,39 @@
@@ -790,7 +790,7 @@ index 313f88f..4fbfa5a 100644
  	status = "okay";
  	pinctrl-0 = <&i2c_a_pins>;
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
-index f7a1cff..b9c5e64 100644
+index f7a1cffab4a8..b9c5e6444daa 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
 @@ -75,6 +75,39 @@
@@ -859,3 +859,6 @@ index f7a1cff..b9c5e64 100644
  &ir {
  	status = "okay";
  	pinctrl-0 = <&remote_input_ao_pins>;
+-- 
+2.17.1
+

@@ -1,7 +1,7 @@
-From 67e2a1601f80648f5c318728218b788c51081fa3 Mon Sep 17 00:00:00 2001
+From ecabfe253aab181bdc241cc7e16e857a3574e528 Mon Sep 17 00:00:00 2001
 From: Jerome Brunet <jbrunet@baylibre.com>
 Date: Thu, 30 Mar 2017 13:46:03 +0200
-Subject: [PATCH] ASoC: meson: add initial spdif dai support
+Subject: [PATCH 07/53] ASoC: meson: add initial spdif dai support
 
 Add support for the spdif dai found on Amlogic Meson SoC family.
 With this initial implementation, only uncompressed pcm playback
@@ -9,16 +9,15 @@ from the spdif dma is supported. Future work will add compressed
 support, pcm playback from i2s dma and capture.
 
 Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-
 ---
  sound/soc/meson/Kconfig     |   3 +-
  sound/soc/meson/Makefile    |   4 +-
- sound/soc/meson/spdif-dai.c | 374 ++++++++++++++++++++++++++++++++++++++++++++
+ sound/soc/meson/spdif-dai.c | 374 ++++++++++++++++++++++++++++++++++++
  3 files changed, 379 insertions(+), 2 deletions(-)
  create mode 100644 sound/soc/meson/spdif-dai.c
 
 diff --git a/sound/soc/meson/Kconfig b/sound/soc/meson/Kconfig
-index 712303f..bc3d6f2 100644
+index 712303ff8970..bc3d6f22ed88 100644
 --- a/sound/soc/meson/Kconfig
 +++ b/sound/soc/meson/Kconfig
 @@ -84,6 +84,7 @@ config SND_SOC_MESON_I2S
@@ -31,7 +30,7 @@ index 712303f..bc3d6f2 100644
 +	  Say Y or M if you want to add support for spdif driver for Amlogic
  	  Meson SoCs.
 diff --git a/sound/soc/meson/Makefile b/sound/soc/meson/Makefile
-index dc5164a7..44f79d8 100644
+index dc5164a7e164..44f79d8b91b7 100644
 --- a/sound/soc/meson/Makefile
 +++ b/sound/soc/meson/Makefile
 @@ -24,8 +24,10 @@ snd-soc-meson-audio-core-objs	 := audio-core.o
@@ -50,7 +49,7 @@ index dc5164a7..44f79d8 100644
 \ No newline at end of file
 diff --git a/sound/soc/meson/spdif-dai.c b/sound/soc/meson/spdif-dai.c
 new file mode 100644
-index 0000000..e763000
+index 000000000000..e7630007c84b
 --- /dev/null
 +++ b/sound/soc/meson/spdif-dai.c
 @@ -0,0 +1,374 @@
@@ -428,3 +427,6 @@ index 0000000..e763000
 +MODULE_DESCRIPTION("Meson spdif DAI ASoC Driver");
 +MODULE_AUTHOR("Jerome Brunet <jbrunet@baylibre.com>");
 +MODULE_LICENSE("GPL v2");
+-- 
+2.17.1
+
