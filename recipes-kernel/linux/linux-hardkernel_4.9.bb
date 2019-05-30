@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-LINUX_VERSION ?= "4.9.170"
+LINUX_VERSION ?= "4.9.177"
 KBRANCH ?= "odroidn2-4.9.y"
-SRCREV ?= "4.9.170-27"
+SRCREV ?= "c1116eecfb0a085f813ad8925b083e7ffaa7d7d7"
 
 require linux-hardkernel.inc
 
